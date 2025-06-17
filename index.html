@@ -1,63 +1,108 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Đang chuyển hướng - BizApp Hub</title>
-  <meta http-equiv="refresh" content="5;url=https://script.google.com/macros/s/AKfycbzcjhxo3jIPrLA-01gqCfd_d-yPbM9Enjhrp-SvERTXTwXBk_k2vsZLRFPFlDuDEEs4cQ/exec" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BizApp Hub - Chuyển đổi số SME</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f2f5;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: "Segoe UI", sans-serif;
+      overflow: hidden;
+    }
+
+    .intro-screen {
+      background: url('3ab44b5b-0bc4-482b-be85-63e5f2601716.png') no-repeat center center/cover;
+      height: 100%;
+      width: 100%;
+      position: absolute;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      color: #333;
-    }
-
-    .container {
+      flex-direction: column;
+      color: white;
       text-align: center;
-      animation: fadeIn 1s ease-in-out;
+      animation: fadeOut 2s ease-out forwards;
+      animation-delay: 2.5s;
+      z-index: 2;
     }
 
-    h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
+    .intro-screen h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
     }
 
-    .dots::after {
-      content: "";
-      display: inline-block;
-      width: 1em;
-      animation: dots 1.2s steps(3, end) infinite;
+    .intro-screen p {
+      margin-top: 10px;
+      font-size: 1.2rem;
     }
 
-    @keyframes dots {
-      0% { content: ""; }
-      33% { content: "."; }
-      66% { content: ".."; }
-      100% { content: "..."; }
+    .main-screen {
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease-in forwards;
+      animation-delay: 2.5s;
+      z-index: 1;
+    }
+
+    .main-screen h2 {
+      font-size: 2rem;
+      color: #222;
+    }
+
+    .main-screen p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      to {
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>BizApp Hub</h1>
-    <p>Đang chuyển hướng<span class="dots"></span></p>
+
+  <div class="intro-screen">
+    <h1>Bộ công cụ BizApp</h1>
+    <p>Khám phá các công cụ chuyển đổi số cho doanh nghiệp SME.</p>
+  </div>
+
+  <div class="main-screen">
+    <h2>Chào mừng đến BizApp Hub</h2>
+    <p>Mang tầm chuyển đổi số cho doanh nghiệp của bạn.</p>
+    <button onclick="redirect()" style="margin-top: 20px; padding: 10px 20px; font-size: 1rem; background: #0077cc; color: white; border: none; border-radius: 6px; cursor: pointer;">
+      Khám phá ngay
+    </button>
   </div>
 
   <script>
-    setTimeout(function () {
+    function redirect() {
       window.location.href = 'https://script.google.com/macros/s/AKfycbzcjhxo3jIPrLA-01gqCfd_d-yPbM9Enjhrp-SvERTXTwXBk_k2vsZLRFPFlDuDEEs4cQ/exec';
-    }, 2000); // Delay 2 giây trước khi chuyển
+    }
   </script>
+
 </body>
 </html>
