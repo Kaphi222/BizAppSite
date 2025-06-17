@@ -1,32 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>BizApp Hub</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5;
-        }
-        .loading {
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đang chuyển hướng - BizApp Hub</title>
+  <meta http-equiv="refresh" content="5;url=https://script.google.com/macros/s/AKfycbzcjhxo3jIPrLA-01gqCfd_d-yPbM9Enjhrp-SvERTXTwXBk_k2vsZLRFPFlDuDEEs4cQ/exec" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .dots::after {
+      content: "";
+      display: inline-block;
+      width: 1em;
+      animation: dots 1.2s steps(3, end) infinite;
+    }
+
+    @keyframes dots {
+      0% { content: ""; }
+      33% { content: "."; }
+      66% { content: ".."; }
+      100% { content: "..."; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-    <div class='loading'>
-        <h1>BizApp Hub</h1>
-        <p>Đang chuyển hướng...</p>
-    </div>
-    <script>
-        window.location.href = 'https://script.google.com/macros/s/AKfycbzcjhxo3jIPrLA-01gqCfd_d-yPbM9Enjhrp-SvERTXTwXBk_k2vsZLRFPFlDuDEEs4cQ/exec';
-    </script>
+  <div class="container">
+    <h1>BizApp Hub</h1>
+    <p>Đang chuyển hướng<span class="dots"></span></p>
+  </div>
+
+  <script>
+    setTimeout(function () {
+      window.location.href = 'https://script.google.com/macros/s/AKfycbzcjhxo3jIPrLA-01gqCfd_d-yPbM9Enjhrp-SvERTXTwXBk_k2vsZLRFPFlDuDEEs4cQ/exec';
+    }, 2000); // Delay 2 giây trước khi chuyển
+  </script>
 </body>
 </html>
-
